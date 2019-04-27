@@ -96,6 +96,18 @@ const struct programmer_entry programmer_table[] = {
 	},
 #endif
 
+#if CONFIG_LINUX_RPI == 1
+	{
+		.name			= "rpi",
+		.type			= OTHER,
+		.devs.note		= "RPi GPIO waster\n",
+		.init			= rpi_init,
+		.map_flash_region	= fallback_map,
+		.unmap_flash_region	= fallback_unmap,
+		.delay			= internal_delay,
+	},
+#endif
+
 #if CONFIG_NICREALTEK == 1
 	{
 		/* This programmer works for Realtek RTL8139 and SMC 1211. */

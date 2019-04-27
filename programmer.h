@@ -103,6 +103,9 @@ enum programmer {
 #if CONFIG_LINUX_SPI == 1
 	PROGRAMMER_LINUX_SPI,
 #endif
+#if CONFIG_LINUX_RPI == 1
+	PROGRAMMER_LINUX_RPI,
+#endif
 #if CONFIG_USBBLASTER_SPI == 1
 	PROGRAMMER_USBBLASTER_SPI,
 #endif
@@ -549,6 +552,11 @@ int linux_mtd_init(void);
 /* linux_spi.c */
 #if CONFIG_LINUX_SPI == 1
 int linux_spi_init(void);
+#endif
+
+/* linux_rpi.c */
+#if CONFIG_LINUX_RPI == 1
+int rpi_init(void);
 #endif
 
 /* dediprog.c */

@@ -205,6 +205,10 @@ if config_linux_spi
   srcs += 'linux_spi.c'
   cargs += '-DCONFIG_LINUX_SPI=1'
 endif
+if config_linux_rpi
+  srcs += 'linux_rpi.c'
+  cargs += '-DCONFIG_LINUX_RPI=1'
+endif
 if config_mstarddc_spi
   srcs += 'mstarddc_spi.c'
   cargs += '-DCONFIG_MSTARDDC_SPI=1'
